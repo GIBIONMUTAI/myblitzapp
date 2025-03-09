@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLITZ - International Education Agency</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#scholarships">Scholarships</a></li>
+                <li><a href="#ieltsTraining">IELTS Training</a></li>
+                <li><a href="#ieltsBooking">Book IELTS</a></li>
+                <li><a href="#schoolApplications">School Applications</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to BLITZ - Your Path to International Education</h1>
+        <p>Explore scholarships, IELTS training, and school applications worldwide.</p>
+    </header>
+
+    <main>
+        <section id="scholarships">
+            <h2>Available Scholarships</h2>
+            <?php include 'scholarships.php'; ?>
+        </section>
+
+        <section id="ieltsTraining">
+            <h2>IELTS Training</h2>
+            <p>Sign up for personalized IELTS preparation courses!</p>
+            <button id="enrollBtn">Enroll Now</button>
+            <div id="trainingForm" style="display: none;">
+                <form action="register_ielts.php" method="POST">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="courseType">Course Type:</label>
+                    <select name="courseType" id="courseType">
+                        <option value="online">Online</option>
+                        <option value="inPerson">In-person</option>
+                    </select><br>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="ieltsBooking">
+            <h2>Book Your IELTS Exam</h2>
+            <form action="book_ielts.php" method="POST">
+                <label for="examDate">Preferred Exam Date:</label>
+                <input type="date" id="examDate" name="examDate" required><br>
+
+                <label for="examLocation">Preferred Location:</label>
+                <select id="examLocation" name="examLocation" required>
+                    <option value="Eldoret">Eldoret</option>
+                    <option value="Nairobi">Nairobi</option>
+                </select><br>
+
+                <button type="submit">Book Exam</button>
+            </form>
+        </section>
+
+        <section id="schoolApplications">
+            <h2>Apply to Schools</h2>
+            <form action="apply_school.php" method="POST">
+                <label for="schoolName">School Name:</label>
+                <input type="text" id="schoolName" name="schoolName" required><br>
+
+                <label for="courseApplied">Course Applied For:</label>
+                <input type="text" id="courseApplied" name="courseApplied" required><br>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="contact_form.php" method="POST">
+                <label for="contactName">Full Name:</label>
+                <input type="text" id="contactName" name="contactName" required><br>
+
+                <label for="contactEmail">Email Address:</label>
+                <input type="email" id="contactEmail" name="contactEmail" required><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea><br>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BLITZ - All Rights Reserved.</p>
+    </footer>
+
+    <script src="scripts.js" defer></script> 
+</body>
+</html>
